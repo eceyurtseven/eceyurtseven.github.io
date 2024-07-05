@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="A benchmark for detecting LLM biases on NLU tasks in AAVE.">
+  <meta name="keywords" content="AAVENUE, Benchmark, LLM">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AAVENUE: Detecting LLM Biases on NLU Tasks in AAVE via a Novel Benchmark</title>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="http://aavenue.live/">
+          <span class="icon">
+            <i class="fas fa-home"></i>
+          </span>
+        </a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">AAVENUE: Detecting LLM Biases on NLU Tasks in AAVE via a Novel
+              Benchmark</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a>Abhay Gupta</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a>Philip Meng</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a>Ece Yurtseven</a><sup>3</sup>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>John Jay Senior High School,</span>
+              <span class="author-block"><sup>2</sup>Phillips Academy,</span>
+              <span class="author-block"><sup>3</sup>Robert College</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/google/nerfies" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <!-- Dataset Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="far fa-images"></i>
+                    </span>
+                    <span>Data</span>
+                  </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Detecting biases in natural language understanding (NLU) for African American Vernacular English (AAVE) is
+              crucial for developing inclusive natural language processing (NLP) systems. Dialect differences lead to
+              performance discrepancies in language technologies, posing challenges for inclusive NLP, which aims to
+              ensure consistent performance across dialectal variations. To address these challenges, we introduce
+              <b>AAVENUE</b> (<b>AAVE</b> <b>N</b>atural Language <b>U</b>nderstanding <b>E</b>valuation), a benchmark designed to evaluate large language
+              model (LLM) performance on standard NLU tasks across AAVE and Standard American English (SAE). Existing
+              benchmarks like VALUE address dialectal bias using deterministic linguistic transformations to evaluate
+              AAVE performance, but these often lack generalizability, limiting their broader applicability. We
+              construct our dataset by using GPT-4-turbo to translate a subset of key tasks from the GLUE and SuperGLUE
+              benchmarks from SAE to AAVE. To validate the quality of our translations, we conducted direct comparison
+              tests against translations generated by VALUE, using fluency scores and BARTScore for translation quality.
+              Our findings showed that our translations were preferred across five popular LLMs. Finally, our
+              evaluations demonstrate that LLMs consistently achieve higher accuracy on SAE versions of NLU tasks
+              compared to AAVE-translated versions, highlighting significant biases in model performance. These findings
+              underscore the need for more inclusive NLP models.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+        We don't have this one yet!
+      </code></pre>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="./static/videos/nerfies_paper.pdf">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              The website template is borrowed from <a href = "https://nerfies.github.io/">Nerfies</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
