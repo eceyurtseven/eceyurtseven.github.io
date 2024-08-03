@@ -35,6 +35,53 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+
+  <style>
+    .shiny-button {
+      background: #333;
+      border: 1px solid #444;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      font-size: 16px;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      font-family: Arial, sans-serif;
+    }
+
+    .shiny-button .icon {
+      margin-right: 8px;
+    }
+
+    .shiny-button::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300%;
+      height: 300%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 60%);
+      transition: all 0.3s ease;
+      transform: translate(-50%, -50%) scale(0);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .shiny-button:hover::before {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .shiny-button span {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
 </head>
 
 <body>
@@ -55,18 +102,15 @@
           </span>
         </a>
       </div>
-
     </div>
   </nav>
-
 
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">AAVENUE: Detecting LLM Biases on NLU Tasks in AAVE via a Novel
-              Benchmark</h1>
+            <h1 class="title is-1 publication-title">AAVENUE: Detecting LLM Biases on NLU Tasks in AAVE via a Novel Benchmark</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
                 <a href="https://www.linkedin.com/in/abhaygupta12/">Abhay Gupta</a><sup>1</sup>,
@@ -89,7 +133,7 @@
               <div class="publication-links">
                 <!-- Code Link. -->
                 <span class="link-block">
-                  <a href="https://github.com/abhayg1266/AAVENUE-Code" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://github.com/abhayg1266/AAVENUE-Code" class="shiny-button">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
