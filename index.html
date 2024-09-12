@@ -174,21 +174,58 @@
                       <h2 class="title is-4">Methodology & Data</h2>
                       <div class="content has-text-justified">
                         <p>
-                          Our research introduces AAVENUE, a novel benchmark designed to assess the performance of large language models on natural language understanding tasks across AAVE and SAE dialects. Our methodology involves translating tasks from existing benchmarks into AAVE using GPT-4-turbo, followed by comprehensive evaluations using various language models.
+                          The AAVENUE benchmark is designed to evaluate large language model (LLM) performance on natural language understanding (NLU) tasks across African American Vernacular English (AAVE) and Standard American English (SAE). We extended existing benchmarks by leveraging few-shot prompted translations using GPT-4o-mini, enhancing flexibility compared to deterministic linguistic transformations used by benchmarks like VALUE. Below, we explain our task selection, translation process, validation, and evaluation metrics.
                         </p>
+              
+                        <h3 class="title is-5">Task Selection</h3>
                         <p>
-                          We selected key tasks from the GLUE and SuperGLUE benchmarks, which are well-regarded for evaluating language model performance across a range of linguistic challenges. The tasks chosen for this study include:
+                          We selected five key tasks from the GLUE and SuperGLUE benchmarks to test model performance in SAE and AAVE. The chosen tasks assess different aspects of NLU:
                         </p>
-                        <ul>
-                          <li><b>SST-2:</b> Sentiment Analysis</li>
-                          <li><b>BoolQ:</b> Question Answering</li>
-                          <li><b>COPA:</b> Causal Reasoning</li>
-                          <li><b>WSC:</b> Coreference Resolution</li>
-                          <li><b>MultiRC:</b> Reading Comprehension</li>
-                        </ul>
+              
+                        <!-- Task Table -->
+                        <table class="table is-bordered is-striped is-narrow is-fullwidth">
+                          <thead>
+                            <tr>
+                              <th>Task</th>
+                              <th>Description</th>
+                              <th>Aspect Tested</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>BoolQ</td>
+                              <td>Yes/no questions based on a passage.</td>
+                              <td>Comprehension and information processing.</td>
+                            </tr>
+                            <tr>
+                              <td>MultiRC</td>
+                              <td>Answering questions requiring connection of information across a passage.</td>
+                              <td>Handling complex and interconnected texts.</td>
+                            </tr>
+                            <tr>
+                              <td>SST-2</td>
+                              <td>Sentiment analysis of movie reviews.</td>
+                              <td>Understanding sentiment in different dialects.</td>
+                            </tr>
+                            <tr>
+                              <td>COPA</td>
+                              <td>Choosing the most plausible outcome or cause from two alternatives.</td>
+                              <td>Cause-and-effect reasoning.</td>
+                            </tr>
+                            <tr>
+                              <td>WSC</td>
+                              <td>Determining which noun a pronoun refers to in ambiguous contexts.</td>
+                              <td>Pronoun resolution and dialectal nuances.</td>
+                            </tr>
+                          </tbody>
+                        </table>
+              
+                        <h3 class="title is-5">SAE to AAVE Translation</h3>
                         <p>
-                          We utilized zero-shot prompting to generate AAVE translations, which were then evaluated using fluency scores and BARTScore metrics. Our analysis included a comprehensive set of 1000 data points per task, ensuring robust evaluation.
+                          We used GPT-4o-mini with few-shot prompting to translate 1000 data points for each task from SAE to AAVE. Below are examples of translations for each task:
                         </p>
+              
+                        <!-- Translation Examples Table -->
                         <table class="table is-bordered is-striped is-narrow is-fullwidth">
                           <thead>
                             <tr>
@@ -225,11 +262,135 @@
                             </tr>
                           </tbody>
                         </table>
+              
+                        <h3 class="title is-5">Validation and Evaluation Metrics</h3>
+                        <p>
+                          We validated our translations using several key metrics. The results from our evaluations are summarized below:
+                        </p>
+              
+                        <!-- Validation Metrics Table -->
+                        <table class="table is-bordered is-striped is-narrow is-fullwidth">
+                          <thead>
+                            <tr>
+                              <th>Metric</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Fluency</td>
+                              <td>Evaluates the grammatical correctness and natural flow of the text (scored out of 100).</td>
+                            </tr>
+                            <tr>
+                              <td>Coherence</td>
+                              <td>Assesses the logical flow and consistency of the text (scored out of 100).</td>
+                            </tr>
+                            <tr>
+                              <td>Understandability</td>
+                              <td>Determines how easily the translation can be understood (scored out of 100).</td>
+                            </tr>
+                            <tr>
+                              <td>Quality</td>
+                              <td>Overall quality assessment of the translation (scored out of 100).</td>
+                            </tr>
+                            <tr>
+                              <td>BARTScore</td>
+                              <td>Measures how closely the AAVE translation aligns with the original SAE sentence, with lower scores indicating better alignment.</td>
+                            </tr>
+                          </tbody>
+                        </table>
+              
+                        <h3 class="title is-5">Human Validation</h3>
+                        <p>
+                          We recruited 10 fluent AAVE speakers from the Bronx and Queens, NY, to evaluate the cultural and linguistic authenticity of the AAVE translations. Each translation was rated on a scale of 1 to 10 for its accuracy in reflecting AAVE. Below are the average scores from the human validators:
+                        </p>
+              
+                        <!-- Human Validation Scores Table -->
+                        <table class="table is-bordered is-striped is-narrow is-fullwidth">
+                          <thead>
+                            <tr>
+                              <th>Task</th>
+                              <th>Average Score (Out of 10)</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>BoolQ</td>
+                              <td>7.02</td>
+                            </tr>
+                            <tr>
+                              <td>MultiRC</td>
+                              <td>7.27</td>
+                            </tr>
+                            <tr>
+                              <td>SST-2</td>
+                              <td>7.09</td>
+                            </tr>
+                            <tr>
+                              <td>COPA</td>
+                              <td>7.22</td>
+                            </tr>
+                            <tr>
+                              <td>WSC</td>
+                              <td>7.25</td>
+                            </tr>
+                          </tbody>
+                        </table>
+              
+                        <h3 class="title is-5">Comparison of AAVENUE vs. VALUE</h3>
+                        <p>
+                          We compared the AAVENUE translations to those generated by the VALUE benchmark across several large language models (LLMs) using binary comparison tasks. Below are the results of these comparisons:
+                        </p>
+              
+                        <!-- Comparison Scores Table -->
+                        <table class="table is-bordered is-striped is-narrow is-fullwidth">
+                          <thead>
+                            <tr>
+                              <th>Task</th>
+                              <th>Model</th>
+                              <th>AAVENUE Preference (%)</th>
+                              <th>VALUE Preference (%)</th>
+                              <th>About the Same (%)</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>BoolQ</td>
+                              <td>GPT-4-turbo</td>
+                              <td>94.51%</td>
+                              <td>4.62%</td>
+                              <td>0.88%</td>
+                            </tr>
+                            <tr>
+                              <td>BoolQ</td>
+                              <td>GPT-4o-mini</td>
+                              <td>88.79%</td>
+                              <td>10.33%</td>
+                              <td>0.88%</td>
+                            </tr>
+                            <tr>
+                              <td>COPA</td>
+                              <td>GPT-4o-mini</td>
+                              <td>90.42%</td>
+                              <td>9.38%</td>
+                              <td>0.21%</td>
+                            </tr>
+                            <tr>
+                              <td>MultiRC</td>
+                              <td>Gemini-1.5-flash</td>
+                              <td>93.85%</td>
+                              <td>6.15%</td>
+                              <td>0.00%</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        
                       </div>
                     </div>
                   </div>
                 </div>
               </section>
+
               <!--/ Methodology Section -->
 
               <!-- Results Section -->
