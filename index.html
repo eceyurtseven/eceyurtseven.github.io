@@ -150,16 +150,12 @@
                       <h2 class="title is-3">Abstract</h2>
                       <div class="content has-text-justified">
                         <p>
-                          Detecting biases in natural language under-
-                          standing (NLU) for African American Ver-
-                          nacular English (AAVE) is crucial to de-
-                          veloping inclusive natural language process-
-                          ing (NLP) systems. To address dialect-
-                          induced performance discrepancies, we intro-
-                          duce AAVENUE (AAVE Natural Language
+                          Detecting biases in natural language under
+                          standing (NLU) for African American Vernacular English (AAVE) is crucial to developing inclusive natural language process
+                          ing (NLP) systems. To address dialect
+                          induced performance discrepancies, we introduce AAVENUE (AAVE Natural Language
                           Understanding Evaluation), a benchmark for
-                          evaluating large language model (LLM) perfor-
-                          mance on NLU tasks in AAVE and Standard
+                          evaluating large language model (LLM) performance on NLU tasks in AAVE and Standard
                           American English (SAE). AAVENUE builds
                           upon and extends existing benchmarks like
                           VALUE, replacing deterministic syntactic and
@@ -168,13 +164,9 @@
                           translation with few-shot prompting, improving
                           performance across several evaluation metrics
                           when translating key tasks from the GLUE and
-                          SuperGLUE benchmarks. We compare AAV-
-                          ENUE and VALUE translations using five pop-
-                          ular LLMs and a comprehensive set of metrics
-                          including fluency, BARTScore, quality, coher-
-                          ence, and understandability. Additionally, the
-                          fluency of AAVENUE is validated by annota-
-                          tions from AAVE speakers. Our evaluations
+                          SuperGLUE benchmarks. We compare AAVENUE and VALUE translations using five popular LLMs and a comprehensive set of metrics
+                          including fluency, BARTScore, quality, coherence, and understandability. Additionally, the
+                          fluency of AAVENUE is validated by annotations from AAVE speakers. Our evaluations
                           reveal that LLMs consistently perform better
                           on SAE tasks than AAVE-translated versions,
                           underscoring inherent biases and highlighting
@@ -195,7 +187,7 @@
                       <h2 class="title is-4">Methodology & Data</h2>
                       <div class="content has-text-justified">
                         <p>
-                          The AAVENUE benchmark is designed to evaluate large language model (LLM) performance on natural language understanding (NLU) tasks across African American Vernacular English (AAVE) and Standard American English (SAE). We extended existing benchmarks by leveraging few-shot prompted translations using GPT-4o-mini, enhancing flexibility compared to deterministic linguistic transformations used by benchmarks like VALUE. Below, we explain our task selection, translation process, validation, and evaluation metrics.
+                          The AAVENUE benchmark is designed to evaluate LLM performance on NLU tasks across AAVE and SAE. We extended existing benchmarks by leveraging few-shot prompted translations using GPT-4o-mini, enhancing flexibility compared to deterministic linguistic transformations used by benchmarks like VALUE. Below, we explain our task selection, translation process, validation, and evaluation metrics.
                         </p>
               
                         <h3 class="title is-5">Task Selection</h3>
@@ -422,211 +414,206 @@
                       <h2 class="title is-4">Results</h2>
                       <div class="content has-text-justified">
                         <p>
-                          Our results demonstrate the performance discrepancies between SAE and AAVE translations across various language models. The analysis revealed that language models consistently perform better on SAE tasks compared to AAVE, indicating inherent biases in these models.
+                          Our evaluations reveal significant performance differences between SAE and AAVE translations across five NLU tasks. Large language models (LLMs) consistently performed better on SAE tasks than their AAVE counterparts. Below, we summarize the accuracy scores and comparison metrics used to evaluate model performance across these tasks.
                         </p>
+              
+                        <h3 class="title is-5">Accuracy Scores</h3>
                         <p>
-                          The following tables summarize the accuracy scores and comparison metrics used to evaluate the models:
+                          We evaluated the accuracy of translations across five key tasks using five popular LLMs. The following tables present the accuracy scores for GPT and Gemini models across both SAE and AAVE tasks.
                         </p>
+              
+                        <!-- GPT Accuracy Scores Table -->
                         <table class="table is-bordered is-striped is-narrow is-fullwidth">
                           <thead>
                             <tr>
                               <th>Task</th>
-                              <th>Model</th>
-                              <th>SAE Accuracy</th>
-                              <th>AAVE Accuracy</th>
+                              <th>GPT-4o-mini (SAE/AAVE)</th>
+                              <th>GPT-4-turbo (SAE/AAVE)</th>
+                              <th>GPT-4o (SAE/AAVE)</th>
                             </tr>
                           </thead>
                           <tbody>
                             <tr>
-                              <td style="border-width: thick thin thin thin">SST-2</td>
-                              <td style="border-width: thick thin thin thin">GPT-3.5-turbo</td>
-                              <td style="border-width: thick thin thin thin">93.5%</td>
-                              <td style="border-width: thick thin thin thin">89.5%</td>
-                            </tr>
-                            <tr>
-                              <td>BoolQ</td>
-                              <td>GPT-3.5-turbo</td>
-                              <td>81.8%</td>
-                              <td>82.5%</td>
-                            </tr>
-                            <tr>
-                              <td>COPA</td>
-                              <td>GPT-3.5-turbo</td>
-                              <td>68.8%</td>
-                              <td>67.6%</td>
-                            </tr>
-                            <tr>
-                              <td>WSC</td>
-                              <td>GPT-3.5-turbo</td>
-                              <td>50.2%</td>
-                              <td>48.2%</td>
-                            </tr>
-                            <tr>
-                              <td>MultiRC</td>
-                              <td>GPT-3.5-turbo</td>
-                              <td>70.1%</td>
-                              <td>62.0%</td>
-                            </tr>
-                            <tr>
-                              <td style="border-width: thick thin thin thin">SST-2</td>
-                              <td style="border-width: thick thin thin thin">GPT-4-turbo</td>
-                              <td style="border-width: thick thin thin thin">91.5%</td>
-                              <td style="border-width: thick thin thin thin">89.9%</td>
-                            </tr>
-                            <tr>
-                              <td>BoolQ</td>
-                              <td>GPT-4-turbo</td>
-                              <td>87.1%</td>
-                              <td>82.0%</td>
-                            </tr>
-                            <tr>
-                              <td>COPA</td>
-                              <td>GPT-4-turbo</td>
-                              <td>95.6%</td>
-                              <td>93.2%</td>
-                            </tr>
-                            <tr>
-                              <td>WSC</td>
-                              <td>GPT-4-turbo</td>
-                              <td>69.8%</td>
-                              <td>66.4%</td>
-                            </tr>
-                            <tr>
-                              <td>MultiRC</td>
-                              <td>GPT-4-turbo</td>
-                              <td>85.9%</td>
-                              <td>77.1%</td>
-                            </tr>
-                            <tr>
-                              <td style="border-width: thick thin thin thin">SST-2</td>
-                              <td style="border-width: thick thin thin thin">GPT-4o</td>
-                              <td style="border-width: thick thin thin thin">88.5%</td>
-                              <td style="border-width: thick thin thin thin">85.3%</td>
-                            </tr>
-                            <tr>
-                              <td>BoolQ</td>
-                              <td>GPT-4o</td>
-                              <td>88.1%</td>
-                              <td>76.2%</td>
-                            </tr>
-                            <tr>
-                              <td>COPA</td>
-                              <td>GPT-4o</td>
-                              <td>96.8%</td>
-                              <td>93.4%</td>
-                            </tr>
-                            <tr>
-                              <td>WSC</td>
-                              <td>GPT-4o</td>
-                              <td>71.0%</td>
-                              <td>65.4%</td>
-                            </tr>
-                            <tr>
-                              <td>MultiRC</td>
-                              <td>GPT-4o</td>
-                              <td>85.5%</td>
-                              <td>78.2%</td>
-                            </tr>
-                            <tr>
-                              <td style="border-width: thick thin thin thin">SST-2</td>
-                              <td style="border-width: thick thin thin thin">Gemini-1.5-flash</td>
-                              <td style="border-width: thick thin thin thin">89.4%</td>
-                              <td style="border-width: thick thin thin thin">86.1%</td>
-                            </tr>
-                            <tr>
-                              <td>BoolQ</td>
-                              <td>Gemini-1.5-flash</td>
-                              <td>88.2%</td>
-                              <td>76.7%</td>
-                            </tr>
-                            <tr>
-                              <td>COPA</td>
-                              <td>Gemini-1.5-flash</td>
-                              <td>93.8%</td>
-                              <td>92.2%</td>
-                            </tr>
-                            <tr>
-                              <td>WSC</td>
-                              <td>Gemini-1.5-flash</td>
-                              <td>49.1%</td>
-                              <td>49.4%</td>
-                            </tr>
-                            <tr>
-                              <td>MultiRC</td>
-                              <td>Gemini-1.5-flash</td>
-                              <td>86.2%</td>
-                              <td>79.4%</td>
-                            </tr>
-                            <tr>
-                              <td style="border-width: thick thin thin thin">SST-2</td>
-                              <td style="border-width: thick thin thin thin">Gemini-1.5-pro</td>
-                              <td style="border-width: thick thin thin thin">90.8%</td>
-                              <td style="border-width: thick thin thin thin">87.5%</td>
-                            </tr>
-                            <tr>
-                              <td>BoolQ</td>
-                              <td>Gemini-1.5-pro</td>
-                              <td>88.5%</td>
-                              <td>72.4%</td>
-                            </tr>
-                            <tr>
-                              <td>COPA</td>
-                              <td>Gemini-1.5-pro</td>
-                              <td>96.0%</td>
-                              <td>91.5%</td>
-                            </tr>
-                            <tr>
-                              <td>WSC</td>
-                              <td>Gemini-1.5-pro</td>
-                              <td>54.0%</td>
-                              <td>51.8%</td>
-                            </tr>
-                            <tr>
-                              <td>MultiRC</td>
-                              <td>Gemini-1.5-pro</td>
-                              <td>82.4%</td>
-                              <td>75.4%</td>
-                            </tr>
-                          
-                          </tbody>
-                        </table>
-
-                        <table class="table is-bordered is-striped is-narrow is-fullwidth">
-                          <thead>
-                            <tr>
-                              <th>Model</th>
-                              <th>Task</th>
-                              <th>AAVE/Value/Same</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td style="border-width: thick thin thin thin">GPT-3.5-turbo</td>
-                              <td style="border-width: thick thin thin thin">SST-2</td>
-                              <td style="border-width: thick thin thin thin">64.66/30.15/5.20</td>
-                            </tr>
-                            <tr>
-                              <td>GPT-4-turbo</td>
                               <td>SST-2</td>
-                              <td>65.90/17.15/16.94</td>
+                              <td>90.40% / 88.40% (-2.0)</td>
+                              <td>94.00% / 92.80% (-1.2)</td>
+                              <td>88.80% / 87.30% (-1.5)</td>
                             </tr>
                             <tr>
-                              <td>GPT-4o</td>
                               <td>BoolQ</td>
-                              <td>77.61/21.02/1.37</td>
+                              <td>88.29% / 85.29% (-3.0)</td>
+                              <td>88.09% / 86.49% (-1.6)</td>
+                              <td>89.19% / 86.89% (-2.3)</td>
                             </tr>
                             <tr>
-                              <td>Gemini-1.5-flash</td>
-                              <td>BoolQ</td>
-                              <td>75.77/22.07/2.17</td>
+                              <td>COPA</td>
+                              <td>95.40% / 93.20% (-2.2)</td>
+                              <td>97.60% / 96.80% (-0.8)</td>
+                              <td>97.20% / 96.40% (-0.8)</td>
                             </tr>
                             <tr>
-                              <td>Gemini-1.5-pro</td>
                               <td>WSC</td>
-                              <td>78.73/20.32/0.95</td>
+                              <td>60.03% / 57.90% (-2.1)</td>
+                              <td>69.60% / 68.69% (-0.9)</td>
+                              <td>70.36% / 67.02% (-3.3)</td>
+                            </tr>
+                            <tr>
+                              <td>MultiRC</td>
+                              <td>84.50% / 72.00% (-12.5)</td>
+                              <td>86.20% / 73.70% (-12.5)</td>
+                              <td>87.50% / 71.30% (-16.2)</td>
                             </tr>
                           </tbody>
                         </table>
+              
+                        <!-- Gemini Accuracy Scores Table -->
+                        <table class="table is-bordered is-striped is-narrow is-fullwidth">
+                          <thead>
+                            <tr>
+                              <th>Task</th>
+                              <th>Gemini-1.5-Flash (SAE/AAVE)</th>
+                              <th>Gemini-1.5-Pro (SAE/AAVE)</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>SST-2</td>
+                              <td>87.70% / 87.10% (-0.6)</td>
+                              <td>92.00% / 91.40% (-0.6)</td>
+                            </tr>
+                            <tr>
+                              <td>BoolQ</td>
+                              <td>89.69% / 87.29% (-2.4)</td>
+                              <td>89.49% / 85.89% (-3.6)</td>
+                            </tr>
+                            <tr>
+                              <td>COPA</td>
+                              <td>91.40% / 92.00% (+0.6)</td>
+                              <td>97.40% / 95.80% (-1.6)</td>
+                            </tr>
+                            <tr>
+                              <td>WSC</td>
+                              <td>48.78% / 48.48% (-0.3)</td>
+                              <td>51.37% / 51.22% (-0.2)</td>
+                            </tr>
+                            <tr>
+                              <td>MultiRC</td>
+                              <td>84.10% / 70.70% (-13.4)</td>
+                              <td>85.90% / 71.90% (-14.0)</td>
+                            </tr>
+                          </tbody>
+                        </table>
+              
+                        <h3 class="title is-5">Accuracy Score Analysis</h3>
+                        <p>
+                          The accuracy scores reveal consistent performance drops when models handle AAVE translations. Tasks like <b>MultiRC</b> and <b>WSC</b> showed the largest accuracy drops, indicating challenges in reading comprehension and pronoun resolution. While GPT-4-turbo exhibited relatively smaller drops, models like GPT-4o-mini struggled more with AAVE translations, particularly in contextually complex tasks. This suggests a clear need for more inclusive training data to better handle AAVE.
+                        </p>
+              
+                        <h3 class="title is-5">Intersection Over Union (IoU) Analysis</h3>
+                        <p>
+                          We analyzed the intersection over union (IoU) between incorrect answers in SAE and AAVE translations to understand whether models faced similar difficulties across dialects. The following table summarizes the IoU percentages:
+                        </p>
+              
+                        <!-- IoU Analysis Table -->
+                        <table class="table is-bordered is-striped is-narrow is-fullwidth">
+                          <thead>
+                            <tr>
+                              <th>Task</th>
+                              <th>GPT-4o-mini</th>
+                              <th>GPT-4-turbo</th>
+                              <th>GPT-4o</th>
+                              <th>Gemini-1.5-Flash</th>
+                              <th>Gemini-1.5-Pro</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>SST-2</td>
+                              <td>8.40%</td>
+                              <td>5.10%</td>
+                              <td>9.80%</td>
+                              <td>10.40%</td>
+                              <td>6.20%</td>
+                            </tr>
+                            <tr>
+                              <td>BoolQ</td>
+                              <td>10.21%</td>
+                              <td>10.71%</td>
+                              <td>8.91%</td>
+                              <td>8.51%</td>
+                              <td>8.41%</td>
+                            </tr>
+                            <tr>
+                              <td>COPA</td>
+                              <td>3.00%</td>
+                              <td>1.60%</td>
+                              <td>2.00%</td>
+                              <td>5.80%</td>
+                              <td>1.80%</td>
+                            </tr>
+                            <tr>
+                              <td>WSC</td>
+                              <td>35.56%</td>
+                              <td>24.01%</td>
+                              <td>25.68%</td>
+                              <td>49.54%</td>
+                              <td>44.53%</td>
+                            </tr>
+                            <tr>
+                              <td>MultiRC</td>
+                              <td>9.60%</td>
+                              <td>9.00%</td>
+                              <td>8.30%</td>
+                              <td>9.90%</td>
+                              <td>7.90%</td>
+                            </tr>
+                          </tbody>
+                        </table>
+              
+                        <p>
+                          Our IoU analysis indicates that the challenges in handling AAVE are often dialect-specific. The IoU scores reveal minimal overlap in incorrect responses between SAE and AAVE, suggesting that models encounter distinct challenges when processing AAVE texts. However, tasks like <b>WSC</b> showed significant overlap, indicating difficulty in handling pronoun resolution in both dialects.
+                        </p>
+              
+                        <h3 class="title is-5">Human Validation</h3>
+                        <p>
+                          We validated our translations using ratings from fluent AAVE speakers. These speakers evaluated the translations for accuracy, fluency, and cultural appropriateness. Below are the average scores from the human validators:
+                        </p>
+              
+                        <!-- Human Validation Scores Table -->
+                        <table class="table is-bordered is-striped is-narrow is-fullwidth">
+                          <thead>
+                            <tr>
+                              <th>Task</th>
+                              <th>Average Score (Out of 10)</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>BoolQ</td>
+                              <td>7.02</td>
+                            </tr>
+                            <tr>
+                              <td>MultiRC</td>
+                              <td>7.27</td>
+                            </tr>
+                            <tr>
+                              <td>SST-2</td>
+                              <td>7.09</td>
+                            </tr>
+                            <tr>
+                              <td>COPA</td>
+                              <td>7.22</td>
+                            </tr>
+                            <tr>
+                              <td>WSC</td>
+                              <td>7.25</td>
+                            </tr>
+                          </tbody>
+                        </table>
+              
+                        <p>
+                          These consistent ratings across multiple fluent speakers reinforce the quality and cultural authenticity of our AAVE translations, confirming that our methodology successfully captured the nuances of AAVE across all tasks.
+                        </p>
                       </div>
                     </div>
                   </div>
